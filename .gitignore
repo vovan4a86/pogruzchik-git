@@ -1,0 +1,12 @@
+# Project exclude paths
+/vendor
+/node_modules
+/public/thumbs/
+/public/uploads/
+/public/test/
+/public/data-site/
+.env
+.idea/
+/composer.lock
+.yarn
+/info.txt

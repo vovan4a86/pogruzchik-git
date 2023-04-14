@@ -1,0 +1,18 @@
+import './alpine';
+// import './asideNav';
+import './cookies';
+import './counter';
+import './fileUpload';
+import './filterAsideNav';
+import './filterBlockLinks';
+import './fixedHeader';
+import './lazyLoading';
+import './light-validation';
+import './map';
+import './offCanvas';
+import './pageScroller';
+import './popups';
+import './requestBtn';
+import './sliders';
+import './tables';
+import './clipboard';
