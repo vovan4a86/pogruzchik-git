@@ -27,23 +27,172 @@ class CraneSpares extends Command
 
     private $basePath = ProductImage::UPLOAD_URL . 'crane-spare/';
     public $baseUrl = 'https://www.crane-spares.com';
-    public $brand = 'Crane Spare';
-    //Запчасти для крановой техники
-
     protected $dictionary = [
-//        'Accumulator' => 'Аккумулятор',
-        'Booster Assy' => 'Усилитель в сборе',
-        'Brake Valve Repair Kit' => 'Комплект для ремонта тормозного клапана',
-        'Clutch Booster Assy' => 'Усилитель сцепления в сборе',
-        'Clutch Booster Repair Kit' => 'Ремкомплект усилителя сцепления',
-        'Gearshift Servo Repair Kit' => 'Комплект для ремонта сервопривода переключения передач',
-        'Power Steering Repair Kit' => 'Комплект для ремонта гидроусилителя руля',
-        'Relay Valve' => 'Релейный клапан',
-        'Repair Kit' => 'Комплект для ремонта',
+//        'Accumulator' => 'Аккумулятор', //0
+
+//        'Booster Assy' => 'Усилитель в сборе', //1
+//        'Brake Valve Repair Kit' => 'Комплект для ремонта тормозного клапана',
+//        'Clutch Booster Assy' => 'Усилитель сцепления в сборе',
+//        'Clutch Booster Repair Kit' => 'Ремкомплект усилителя сцепления',
+//        'Gearshift Servo Repair Kit' => 'Комплект для ремонта сервопривода переключения передач',
+//        'Power Steering Repair Kit' => 'Комплект для ремонта гидроусилителя руля',
+//        'Relay Valve' => 'Релейный клапан',
+//        'Repair Kit' => 'Комплект для ремонта',
+
+        'Swing Brake Pad' => 'Поворотная тормозная колодка', //2
+        'Brake Pad' => 'Тормозная колодка',
+
+        'Brake Valve Repair Kit' => 'Комплект для ремонта тормозных клапанов', //3
+        'Throttle Valve Repair Kit' => 'Ремонтный комплект дроссельного клапана',
+        'Brake Valve' => 'Тормозной клапан',
+        'Throttle Valve' => 'Дроссельный клапан',
+
+        'Caliper Seal Kit' => 'Комплект уплотнений суппорта', //4
+
+        'Pressure Plate Assy' => 'Прижимная пластина в сборе', //5
+        'Clutch Disc' => 'Диск сцепления',
+
+        'Brake Cylinder Repair Kit' => 'Комплект для ремонта тормозного цилиндра', //6
+        'Control Cylinder Assy' => 'Цилиндр управления в сборе',
+        'Exhaust Brake Cylinder' => 'Выпускной тормозной цилиндр',
+        'Winch Brake Cylinder' => 'Тормозной цилиндр лебедки',
+        'Cylinder Assy' => 'Цилиндр в сборе',
+        'Wheel Cylinder' => 'Колесный цилиндр',
+        'Master Cylinder' => 'Главный цилиндр',
+        'Power Cylinder' => 'Силовой цилиндр',
+        'Throttle Cylinder' => 'Дроссельный цилиндр',
+        'Air Cylinder' => 'Воздушный цилиндр',
+        'Brake Cylinder' => 'Тормозной цилиндр',
+        'Cylinder Repair Kit' => 'Ремонтный комплект для цилиндра',
+        'Clutch Cylinder' => 'Цилиндр сцепления',
+
+        'Diesel Hammer Cushion Rubber' => 'Резиновая подушка дизельного молота', //7
+        'Diesel Hammer Fuel Pump' => 'Топливный насос дизельного молота',
+        'Diesel Hammer Grease Nipple' => 'Ниппель для смазки дизельного молота',
+        'Diesel Hammer Guide Ring' => 'Направляющее кольцо дизельного молота',
+        'Diesel Hammer Piston Assy' => 'Поршень дизельного молота в сборе',
+        'Diesel Hammer Piston Ring' => 'Поршневое кольцо дизельного молота',
+
+        'Contact Relay' => 'Контактное реле', //8
+        'Operator Cabin Fan' => 'Вентилятор кабины оператора',
+        'DC Converter' => 'Преобразователь постоянного тока',
+        'Surge Protector' => 'Устройство защиты от перепадов напряжения',
+        'Starter Switch' => 'Переключатель стартера',
+        'Battery Relay' => 'Реле батареи',
+        'Brush Holder' => 'Держатель щетки',
+        'Engine Stop Solenoid' => 'Соленоид остановки двигателя',
+        'Control Unit Assy' => 'Блок управления в сборе',
+        'Solenoid Assy' => 'Соленоид в сборе',
+        'Rectifier' => 'Выпрямитель',
+        'Regulator' => 'Регулятор',
+        'Alternator' => 'Генератор',
+        'Relay' => 'Реле',
+        'Starter' => 'Стартер',
+
+        'Air Pressure Switch' => 'Реле давления воздуха', //9
+        'AV Sensor' => 'Датчик AV',
+        'Element Generator' => 'Генератор элементов',
+        'EPROM' => 'ППЗУ',
+        'LCD' => 'ЖК-Дисплей',
+        'Moment Limiter' => 'Ограничитель момента',
+        'Oil Pressure Sensor' => 'Датчик давления масла',
+        'Optical Reel Cord' => 'Оптический шнур катушки',
+        'Optical Cable' => 'Оптический кабель',
+        'Optical Cord' => 'Оптический шнур',
+        'Panel Switch' => 'Панельный переключатель',
+        'Potentio Meter' => 'Измеритель потенциала',
+        'Pressure Sensor' => 'Датчик давления',
+        'Print Plate' => 'Печатная плата',
+        'Proximity Switch' => 'Бесконтактный переключатель',
+        'Reel Cord' => 'Катушка шнура',
+        'Rotary Brush' => 'Роторная щетка',
+        'Sensor L Theta' => 'Датчик L Тета',
+        'Sensor Load' => 'Датчик нагрузки',
+        'Sensor Stroke' => 'Датчик хода',
+        'Switch Assy' => 'Переключатель в сборе',
+        'Switch' => 'Переключатель',
+        'Switch Box' => 'Распределительная коробка',
+        'Angle Sensor' => 'Датчик угла поворота',
+        'IC Servo' => 'Сервопривод IC',
+        'Outrigger Sensor' => 'Датчик аутриггера',
+        'Panel Cover' => 'Крышка панели',
+        'Sensor' => 'Датчик',
+        'Load Cell' => 'Датчик нагрузки',
+        'Load Indicator' => 'Индикатор нагрузки',
+        'Accelerator Sensor' => 'Датчик акселератора',
+        'Pick Up Sensor' => 'Датчик подхвата',
+        'Swing Regulator Assy' => 'Регулятор поворота в сборе',
+        'Transistor' => 'Транзистор',
+        'Cord Assy' => 'Шнур в сборе',
+        'Controller SPL' => 'Контроллер SPL',
+        'Display Panel' => 'Панель дисплея',
+        'Limit Switch' => 'Концевой переключатель',
+        'Reel Cord Drum Assy' => 'Барабан шнура катушки в сборе',
+        'Sender Pressure' => 'Давление отправителя',
+        'Transmitter Multiplex Data' => 'Передатчик мультиплексных данных',
+        'Telescopic Wire' => 'Телескопический провод',
+
+
+
     ];
+    public $brand = 'Crane Spare';
+
+    //Запчасти для крановой техники
     protected $dictionaryCatalog = [
 //        'Accumulators' => 'Аккумуляторы',
-        'Booster Assy' => 'Усилитель в сборе'
+//        'Booster Assy' => 'Усилитель в сборе'
+        'Brake Pads' => 'Тормозные колодки',
+        'Brake Valves' => 'Тормозные клапаны',
+        'Caliper Seal Kits' => 'Комплекты уплотнений суппорта',
+        'Clutch Discs' => 'Диски сцепления',
+        'Cylinder Assy' => 'Цилиндр в сборе',
+        'Diesel Hammer Parts' => 'Запчасти для дизельных молотов',
+        'Electrical Items' => 'Электрические детали',
+        'Electronics Components' => 'Компоненты электроники',
+        'Engine Fans' => 'Вентиляторы двигателя',
+        'Engine Filters' => 'Фильтры двигателя',
+        'Engine Mountings' => 'Крепления двигателя',
+        'Friction Plates' => 'Фрикционные накладки',
+        'Fuel Feed Pumps' => 'Насосы подачи топлива',
+        'Gear Sets' => 'Наборы шестерен',
+        'Grove Crane Parts' => 'Запчасти для кранов Grove',
+        'Hino Engine Parts' => 'Запчасти для двигателей Hino',
+        'Hitachi Crane Parts' => 'Запчасти для кранов Hitachi',
+        'Hoses' => 'Шланги',
+        'Hydraulic Filters' => 'Гидравлические фильтры',
+        'Hydraulic Motors' => 'Гидравлические моторы',
+        'Hydraulic Pumps' => 'Гидравлические насосы',
+        'Hydraulic Seal Kits' => 'Комплекты гидравлических уплотнений',
+        'Hydraulic Valves' => 'Гидравлические клапаны',
+        'Isuzu Engine Parts' => 'Запчасти для двигателей Isuzu',
+        'Kato Crane Parts' => 'Запчасти для кранов Kato',
+        'Kobelco Crane Parts' => 'Запчасти для кранов Kobelco',
+        'Level Gauges' => 'Уровнемеры',
+        'Magnetic Valves' => 'Магнитные клапаны',
+        'Meter Gauges' => 'Измерительные манометры',
+        'Miscellaneous Items' => 'Разное',
+        'Mitsubishi Engine Parts' => 'Запчасти для двигателей Mitsubishi',
+        'Nissan Engine Parts' => 'Запчасти для двигателей Nissan',
+        'Oil Pumps' => 'Масляные насосы',
+        'P&H Crane Parts' => 'Запчасти кранов P&H',
+        'P&H Omega Crane Parts' => 'Запчасти для кранов P&H Omega',
+        'Power Steering Cartridges' => 'Картриджи гидроусилителя руля',
+        'Safety Devices' => 'Устройства безопасности',
+        'Shafts' => 'Валы',
+        'Solenoid Valves' => 'Соленоидные клапаны',
+        'Sprockets' => 'Звездочки',
+        'Steering Pumps' => 'Рулевые насосы',
+        'Sumitomo Crane Parts' => 'Детали кранов Sumitomo',
+        'Super Structure' => 'Суперструктура',
+        'Swing Bearings' => 'Поворотные подшипники',
+        'Swivel Joints' => 'Шарнирные соединения',
+        'Tadano Crane Parts' => 'Запчасти для кранов Tadano',
+        'Track Chains' => 'Гусеничные цепи',
+        'Track Rollers' => 'Гусеничные ролики',
+        'Track Shoes' => 'Гусеничные башмаки',
+        'Turbo Chargers' => 'Турбозарядные устройства',
+        'Valve Assy' => 'Узел клапана',
+        'Water Pumps' => 'Водяные насосы',
     ];
 
     public $client;
