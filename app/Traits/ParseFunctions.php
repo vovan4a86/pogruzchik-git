@@ -257,18 +257,15 @@ trait ParseFunctions {
      * @param int $parentId
      * @return Catalog
      */
-    private function getCatalogByName(string $categoryName, int $parentId = null): Catalog {
-        if($parentId == null) return Catalog::whereName($categoryName)->first();
-        $catalog = Catalog::whereName($categoryName)->where('parent_id', $parentId)->first();
+    private function getCatalogByName(string $categoryName): Catalog {
+        $catalog = Catalog::whereName($categoryName)->first();
         if (!$catalog) {
             $catalog = Catalog::create([
                 'name' => $categoryName,
                 'title' => $categoryName,
                 'h1' => $categoryName,
-                'parent_id' => $parentId,
                 'alias' => Text::translit($categoryName),
                 'slug' => Text::translit($categoryName),
-                'order' => Catalog::whereParentId($parentId)->max('order') + 1,
                 'published' => 1,
             ]);
             $this->info('+++ ' . ' Новый раздел: ' . $categoryName);

@@ -21,6 +21,7 @@ class Kernel extends ConsoleKernel {
         'App\Console\Commands\ParseSpareMirst',
         'App\Console\Commands\ParseAutoMaksi',
         'App\Console\Commands\ParseLiftNet',
+        'App\Console\Commands\CraneSpares',
 		Commands\ImportOld::class,
 	];
 
