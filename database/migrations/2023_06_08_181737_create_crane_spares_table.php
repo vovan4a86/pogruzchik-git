@@ -22,6 +22,7 @@ class CreateCraneSparesTable extends Migration
             $table->string('name');
             $table->string('translate');
             $table->string('articul');
+            $table->string('parse_image');
             $table->timestamps();
         });
     }
