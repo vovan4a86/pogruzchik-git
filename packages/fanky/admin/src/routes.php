@@ -6,6 +6,7 @@ use Fanky\Admin\Controllers\AdminActionController;
 
 Route::group(['namespace' => 'Fanky\Admin\Controllers', 'prefix' => 'admin', 'as' => 'admin'], function () {
 	Route::any('/', ['uses' => 'AdminController@main']);
+	Route::get('/export-crane', ['uses' => 'AdminController@exportCrane']);
 	Route::group(['as' => '.pages', 'prefix' => 'pages'], function () {
 		$controller  = 'AdminPagesController@';
 		Route::get('/', $controller . 'getIndex');

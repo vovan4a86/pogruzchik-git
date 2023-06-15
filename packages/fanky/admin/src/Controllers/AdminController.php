@@ -1,17 +1,16 @@
 <?php namespace Fanky\Admin\Controllers;
 
+use App\Exports\CraneSpareExport;
 use App\Http\Controllers\Controller;
 use Fanky\Admin\Models\AdminLog;
+use Maatwebsite\Excel\Facades\Excel;
 use Request;
 use Validator;
 use App\User;
 use Auth;
 
-use Fanky\Admin\Models\Participant;
 use Fanky\Admin\Models\GalleryItem;
 use Fanky\Admin\Models\Complex;
-use Fanky\Admin\Models\Sponsor;
-use Fanky\Admin\Models\Specialist;
 use Image;
 use Thumb;
 
@@ -33,5 +32,10 @@ class AdminController extends Controller {
 			'logs'	=> $logs
 		]);
 	}
+
+	public function exportCrane()
+    {
+        return Excel::download(new CraneSpareExport, 'crane-spare-list.xlsx');
+    }
 
 }
